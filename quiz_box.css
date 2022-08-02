@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color:#10162f;
+}
+.intro{
+    color: white;
+    user-select: none;
+}
+.intro.activeContent{
+    display: none;
+}
+.intro .heading{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px;
+}
+.intro .description{
+    display: flex;
+}
+.intro .description .defination{
+    text-align: center;
+    padding: 60px;
+    margin: 0 50px 0px 20px;
+}
+.intro .brain_image{
+    margin-right: 50px;
+}
+.intro .description img{
+    text-align: center;
+    height: 200px;
+    width: auto;
+}
+.intro .description .defination span{
+    color: yellow;
+}
+.intro .image{
+    display: flex;
+    justify-content: center;
+}
+.intro .image img{
+    height: 500px;
+    width: 70%;
+}
+.quiz_message{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 60px;
+}
+.quiz_message span{
+    color: yellow;
+}
+.rules_info,.quiz_box,.result{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 5px 3px 5px 1px rgba(0,0,0,0.2),5px 6px 10px 1px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+
+}
+.rules_info.activeRules,
+.quiz_box.activeQuiz,.result.activeResult{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+    z-index: 500;
+}
+.start{
+    display: flex;
+    justify-content: center;
+}
+.start button.activeStartButton{
+    display: none;
+}
+.start button{
+    font-size: 20px;
+    font-weight: 570;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    transition: all 0.5s ease;
+    margin-top: 50px;
+}
+.rules_info{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: white;
+    width: 600px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+
+}
+.rules_info .rules_title{
+    height: 60px;
+    border-bottom: 1px solid gray;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rules_info .rules_list{
+    padding: 20px;
+}
+ .rules_list .rule{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px;
+}
+.rules_info .exit_button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+.rules_info .exit_button .exit{
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin: 0 10px;
+}
+.rules_info .exit_button .continue{
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.exit_button .exit:hover{
+    color: navy;
+    background-color: aliceblue;
+}
+.exit_button .continue:hover{
+    color: navy;
+    background-color: aliceblue;
+}
+
+.quiz_box{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px 1px rgba(100,0,0,0.4);
+    background-color: white;
+    width: auto;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+
+}
+.quiz_box .timer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px; 
+    border-bottom: 1px solid gray;  
+    position: relative;
+    z-index: 2; 
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+
+}
+.quiz_box .timer .time_text{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    user-select: none;
+}
+.quiz_box .timer .time{
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+.quiz_box section{
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid gray;
+}
+.quiz_box section .question{
+    font-size: 25px;
+    font-weight: 530;
+    user-select: none;
+    
+}
+
+.quiz_box section .option_list{
+    padding: 20px 0;
+    display: block;
+}
+.quiz_box section .option{
+    font-size: 20px;
+    font-weight: 450;
+    padding: 5px 10px;
+    background-color: aliceblue;
+    border: 2px solid #6CB4EE;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.4s ease;
+}
+.option_list .option.correct_ans{
+    color: #002D62;
+    background-color: #dafeda;
+    border-color: #26ff26;
+}
+.option_list .option.wrong_ans{
+    color: #002D62;
+    background-color: #FCD3D3;
+    border-color: #F34444;
+}
+
+.option_list .option.disabled{
+    pointer-events: none;
+}
+.quiz_box section .option:hover{
+    color: #002D62;
+    background-color: #CCE5FF;
+
+}
+.quiz_box footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.quiz_box footer .total_ques{
+    font-size: 20px;
+    user-select: none;
+}
+.quiz_box footer .total_ques p span{
+
+    font-weight: 600;
+}
+.quiz_box footer .next_button{
+    font-size: 17px;
+    font-weight: 550;
+    padding: 5px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+    background-color:#002D62;
+    color: white;
+    border: 2px solid #007FFF;
+    display: none;
+}
+
+
+.result{
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+
+}
+.result .emoji{
+
+    user-select: none;
+}
+.result .result_message{
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+.result .convergent_score{
+    font-size: 20px;
+    text-align: center;
+}
+.result .divergent_score{
+    font-size: 20px;
+    text-align: center;
+}
+.result .convergent_score span{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+}
+.result .divergent_score span{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+}
